@@ -1,0 +1,38 @@
+I USED THREE DIFFERENT TUTORIALS TO GET IDEAS TO CREATE THAT.
+ONE FOR THE UPPER PART FROM TOP TO WHERE THE FOOTER BEGINS.
+
+SECOND ONE FOR THE FOOTER PART.
+THIRD ONE FOR THE RIBBON FOR TOP ADS
+
+THE IMAGES(AD IMAGES LIKE THE CARS) ARE STATIC BUT THE DJANGO STUFF WE'LL USE FOR LOOP.
+
+EXAMPLE 
+
+{% FOR ITEM IN ADS: %}
+	{% IF ITEM.TOP==0: %}
+	                      <div class="product-box">
+				<div class="ribbon top__left">
+                                <span>TOP</span>
+                                </div>
+				<img src="{{item.img1}}" alt="" class="product-img">
+				<h2 class="product-title">{{item.title}}</h2>
+				<span class="price">{{item.price}}</span></br></br>
+				<i class="fa-solid fa-location-dot"></i>&nbsp {{item.location}}
+				<i class='bx bx-shopping-bag add-cart'></i>
+			</div>
+{% else: %}
+
+	<div class="product-box">
+				<img src="{{item.img1}}" alt="" class="product-img">
+				<h2 class="product-title">{{item.title}}</h2>
+				<span class="price">{{item.price}}</span></br></br>
+				<i class="fa-solid fa-location-dot"></i>&nbsp {{item.location}}
+				<i class='bx bx-shopping-bag add-cart'></i>
+			</div>
+
+{% endif %}
+{%endforloop %}
+
+ALSO NOTE THE TOP IS ALLOCATED 0 FOR TOP ADS AND 1 FOR NON TOP.THIS IS SO THAT IF I ORDER BY TOP THE ZERO'S WILL FIRST START AND THEREFORE BE ON TOP.
+
+THEN OBVIOUSLY / BASICALLY, THE IMAGES/ADS WILL BE DYNAMIC URL TO THE COMPLETE AD DETAILS PAGE
